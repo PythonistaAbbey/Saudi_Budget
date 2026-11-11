@@ -93,7 +93,7 @@ export function SearchWidget({ variant = "hero", onSearch }: { variant?: "hero" 
 
   return (
     <form onSubmit={submit} aria-label={t.search.find} className={clsx("w-full", dark ? "glass rounded-[28px] p-3 shadow-lift" : "rounded-3xl border border-ink/8 bg-white p-3 shadow-soft")} data-testid="search-widget" noValidate>
-      <div className="grid gap-2 md:grid-cols-2 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1.3fr)_minmax(0,1fr)_minmax(0,1fr)_auto]">
+      <div className="grid gap-2 md:grid-cols-2 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1.05fr)_minmax(0,1.2fr)_minmax(0,1.2fr)_auto]">
         <div className={fieldWrap}>
           <label className={lbl} htmlFor={`${variant}-pcity`}>
             <MapPin className="size-3.5 text-ember" aria-hidden /> {t.search.pickup}

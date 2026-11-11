@@ -47,7 +47,7 @@ export function VehicleCard({ v, query, days }: { v: Vehicle; query?: string; da
               </L>
             </h3>
             <p className="text-xs text-slate">
-              {t.v.orSimilar} · {num(v.year)}
+              {t.v.orSimilar} · {v.year}
             </p>
           </div>
           <span className="inline-flex items-center gap-1 text-xs font-semibold text-slate">
