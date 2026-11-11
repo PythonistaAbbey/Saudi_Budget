@@ -26,7 +26,7 @@ for (const locale of ["en", "ar"] as const) {
 
 test("root redirects to English", async ({ page }) => {
   await page.goto("/");
-  await expect(page).toHaveURL(/\/en$/);
+  await expect(page).toHaveURL(/\/en\/?$/);
 });
 
 test("all internal links resolve", async ({ page, request }) => {

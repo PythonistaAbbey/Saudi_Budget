@@ -51,7 +51,7 @@ function LangSwitchInner({ className }: { className?: string }) {
   const other = locale === "en" ? "ar" : "en";
   const rest = pathname.replace(/^\/(en|ar)/, "");
   const qs = params.toString();
-  const target = `/${other}${rest}${qs ? `?${qs}` : ""}`;
+  const target = `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/${other}${rest}${qs ? `?${qs}` : ""}`;
   return (
     <a href={target} hrefLang={other} lang={other} aria-label={t.languageLabel} className={clsx("inline-flex items-center gap-1.5 rounded-full px-3 py-2 text-sm font-semibold", className)} data-testid="lang-switch">
       <Globe className="size-4" aria-hidden />
