@@ -106,7 +106,9 @@ export function ConciergeChat({ compact = false }: { compact?: boolean }) {
   const { tx, locale, money, t } = useI18n();
   const [q, setQ] = useState("");
   const end = useRef<HTMLDivElement>(null);
-  useEffect(() => end.current?.scrollIntoView({ behavior: "smooth", block: "nearest" }), [msgs, thinking]);
+  useEffect(() => {
+    end.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }, [msgs, thinking]);
 
   return (
     <div className="flex h-full flex-col" data-testid="concierge">

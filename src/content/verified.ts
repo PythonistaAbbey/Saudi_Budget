@@ -296,3 +296,49 @@ export const networkCities = v(
   "verified",
   "The directory headline states “135 locations in 43 cities”; several entries are alternate spellings of the same city.",
 );
+
+/* ------------------------------------------------------------------ Timeline */
+export interface Milestone {
+  year: string;
+  date?: string;
+  title: { en: string; ar: string };
+  body: { en: string; ar: string };
+  source: string;
+}
+
+export const timeline: Milestone[] = [
+  {
+    year: "1978",
+    date: "1978-12-17",
+    title: { en: "Founded in Jeddah", ar: "التأسيس في جدة" },
+    body: { en: "Started with one rental office, 20 cars and a team of 15 employees.", ar: "البداية بمكتب تأجير واحد و٢٠ سيارة وفريق من ١٥ موظفًا." },
+    source: S.about,
+  },
+  {
+    year: "2007",
+    date: "2007-09",
+    title: { en: "Listed on Tadawul", ar: "الإدراج في تداول" },
+    body: { en: "United International Transportation Company listed on the Saudi Exchange under the symbol 4260.", ar: "إدراج الشركة المتحدة الدولية للمواصلات في السوق المالية السعودية بالرمز ٤٢٦٠." },
+    source: S.mubasher,
+  },
+  {
+    year: "2016",
+    date: "2016-05-08",
+    title: { en: "Exclusive Payless licence", ar: "ترخيص حصري لعلامة Payless" },
+    body: { en: "Reported exclusive licence to rent Payless-branded cars across the Kingdom, under a franchise agreement running 30 June 2016 to 31 December 2026.", ar: "ترخيص حصري لتأجير سيارات علامة Payless في المملكة بموجب اتفاقية امتياز من ٣٠ يونيو ٢٠١٦ حتى ٣١ ديسمبر ٢٠٢٦، بحسب ما نُشر." },
+    source: "https://www.argaam.com/en/bf/budget-saudi/article/id/425474/budget-saudi-gets-exclusive-license-to-rent-payless-cars",
+  },
+  {
+    year: "2024",
+    date: "2024-07-18",
+    title: { en: "AutoWorld acquisition completed", ar: "إتمام الاستحواذ على أوتو ورلد" },
+    body: { en: "Completed the acquisition of 100% of Al Jazira Equipment Co. (AutoWorld) through subsidiary Rahaal, settled in new shares.", ar: "إتمام الاستحواذ على كامل شركة الجزيرة للمعدات (أوتو ورلد) عبر الشركة التابعة رحّال، مقابل أسهم جديدة." },
+    source: "https://www.argaam.com/en/bf/budget-saudi/article/id/1741967/budget-saudi-completes-acquisition-of-autoworld",
+  },
+  {
+    year: "Today",
+    title: { en: "A national mobility network", ar: "شبكة تنقّل وطنية" },
+    body: { en: "120+ rental offices, 1,700+ employees and a group fleet of about 54,000 vehicles, as stated on the About page (the date of these figures is not published).", ar: "أكثر من ١٢٠ مكتب تأجير و١٧٠٠ موظف وأسطول للمجموعة يقارب ٥٤ ألف مركبة، كما ورد في صفحة من نحن (تاريخ هذه الأرقام غير منشور)." },
+    source: S.about,
+  },
+];

@@ -169,7 +169,9 @@ export function HeroScene({ onScene }: { onScene?: (i: number) => void }) {
     const id = setInterval(() => setI((x) => (x + 1) % SCENES.length), 7000);
     return () => clearInterval(id);
   }, [reduce, paused]);
-  useEffect(() => onScene?.(i), [i, onScene]);
+  useEffect(() => {
+    onScene?.(i);
+  }, [i, onScene]);
 
   const s = SCENES[i];
   const Art = ART[s.id];
