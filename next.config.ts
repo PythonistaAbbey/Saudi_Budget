@@ -10,15 +10,23 @@ const securityHeaders = [
   { key: "X-Robots-Tag", value: "noindex, nofollow" },
 ];
 
+// STATIC_EXPORT=1 builds a plain HTML/JS site in out/ that any static host can serve (no Node server).
+// Static hosts can't send headers or redirects, so those are omitted; public/index.html handles "/".
+const isExport = process.env.STATIC_EXPORT === "1";
+
 const config: NextConfig = {
   reactStrictMode: true,
+  ...(isExport ? { output: "export" as const, trailingSlash: true, images: { unoptimized: true } } : {}),
   poweredByHeader: false,
-  async redirects() {
-    return [{ source: "/", destination: "/en", permanent: false }];
-  },
-  async headers() {
-    return [{ source: "/:path*", headers: securityHeaders }];
-  },
+  ...(isExport ? {} : { redirects, headers }),
 };
+
+async function redirects() {
+  return [{ source: "/", destination: "/en", permanent: false }];
+}
+
+async function headers() {
+  return [{ source: "/:path*", headers: securityHeaders }];
+}
 
 export default config;

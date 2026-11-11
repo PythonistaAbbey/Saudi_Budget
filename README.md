@@ -44,6 +44,16 @@ npm run dev          # http://localhost:3000 (redirects to /en)
 npm run build && npm start   # production build
 ```
 
+### Static version (no server needed)
+
+```bash
+STATIC_EXPORT=1 npm run build   # writes a plain HTML/JS site to out/
+cd out && python3 -m http.server 8080   # then open http://localhost:8080
+```
+
+`out/` can be uploaded to any static host (GitHub Pages, Netlify, Cloudflare Pages, S3). Static hosts can't send the
+security and `noindex` headers from `next.config.ts`, so every page also carries a `noindex` meta tag and `robots.txt`.
+
 ## Test it
 
 ```bash

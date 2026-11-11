@@ -3,7 +3,7 @@ import { test, expect } from "@playwright/test";
 test("language switch keeps the page and booking query", async ({ page }) => {
   await page.goto("/en/find-a-car?cat=suv&sort=priceAsc");
   await page.getByTestId("lang-switch").click();
-  await expect(page).toHaveURL(/\/ar\/find-a-car\?cat=suv&sort=priceAsc/);
+  await expect(page).toHaveURL(/\/ar\/find-a-car\/?\?cat=suv&sort=priceAsc/);
   await expect(page.locator("html")).toHaveAttribute("dir", "rtl");
   await expect(page.getByTestId("filter-cat-suv")).toHaveAttribute("aria-pressed", "true");
 });
