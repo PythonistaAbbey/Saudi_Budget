@@ -13,10 +13,13 @@ const securityHeaders = [
 // STATIC_EXPORT=1 builds a plain HTML/JS site in out/ that any static host can serve (no Node server).
 // Static hosts can't send headers or redirects, so those are omitted; public/index.html handles "/".
 const isExport = process.env.STATIC_EXPORT === "1";
+// For hosting under a sub-path, e.g. GitHub Pages project sites: NEXT_PUBLIC_BASE_PATH=/Saudi_Budget
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || undefined;
 
 const config: NextConfig = {
   reactStrictMode: true,
   ...(isExport ? { output: "export" as const, trailingSlash: true, images: { unoptimized: true } } : {}),
+  ...(basePath ? { basePath } : {}),
   poweredByHeader: false,
   ...(isExport ? {} : { redirects, headers }),
 };

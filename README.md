@@ -51,6 +51,10 @@ STATIC_EXPORT=1 npm run build   # writes a plain HTML/JS site to out/
 cd out && python3 -m http.server 8080   # then open http://localhost:8080
 ```
 
+For GitHub Pages (served from `https://<user>.github.io/Saudi_Budget/`), add the sub-path:
+`STATIC_EXPORT=1 NEXT_PUBLIC_BASE_PATH=/Saudi_Budget npm run build`, then publish `out/` (with an empty `.nojekyll`
+file) to the `gh-pages` branch.
+
 `out/` can be uploaded to any static host (GitHub Pages, Netlify, Cloudflare Pages, S3). Static hosts can't send the
 security and `noindex` headers from `next.config.ts`, so every page also carries a `noindex` meta tag and `robots.txt`.
 
