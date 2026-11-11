@@ -1,0 +1,3 @@
+# Independent concept prototype. Not an official Budget Saudi website.
+User-agent: *
+Disallow: /
